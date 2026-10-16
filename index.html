@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Dr. Zulfiqar Ali — mechanical engineering educator and researcher working in isogeometric analysis, thermal simulation, additive manufacturing, and engineering education.">
+  <meta name="theme-color" content="#102b46">
+  <title>Dr. Zulfiqar Ali | Engineering Research & Education</title>
+  <style>
+    :root {
+      --navy: #102b46;
+      --blue: #176a86;
+      --teal: #087f80;
+      --ink: #203348;
+      --muted: #56687a;
+      --paper: #f5f8fb;
+      --line: #dce5ed;
+      --white: #fff;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; scroll-padding-top: 95px; }
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--ink);
+      background: var(--paper);
+      line-height: 1.7;
+    }
+    a { color: var(--blue); text-underline-offset: 4px; }
+    a:hover { color: var(--teal); }
+    a:focus-visible {
+      outline: 3px solid #e5a52b;
+      outline-offset: 5px;
+    }
+    .container { width: min(1100px, 90%); margin: auto; }
+    .skip {
+      position: absolute;
+      top: -100px;
+      left: 12px;
+      background: white;
+      padding: 10px;
+      z-index: 20;
+    }
+    .skip:focus { top: 12px; }
+    header {
+      background: var(--white);
+      border-bottom: 1px solid var(--line);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 16px 0;
+    }
+    .brand {
+      font-weight: 800;
+      color: var(--navy);
+      text-decoration: none;
+      white-space: nowrap;
+    }
+    nav { display: flex; flex-wrap: wrap; gap: 10px 20px; }
+    nav a { font-size: .9rem; text-decoration: none; font-weight: 600; }
+    .hero {
+      color: white;
+      background:
+        radial-gradient(ellipse at top right, #215e73 0, transparent 55%),
+        var(--navy);
+      padding: 90px 0 80px;
+    }
+    .hero-layout {
+      display: grid;
+      grid-template-columns: 1.65fr 1fr;
+      align-items: center;
+      gap: 48px;
+    }
+    .eyebrow {
+      font-size: .78rem;
+      text-transform: uppercase;
+      letter-spacing: .15em;
+      font-weight: 750;
+      color: #a8e2dd;
+    }
+    h1 {
+      font-size: clamp(2.5rem, 6vw, 4.6rem);
+      line-height: 1.08;
+      letter-spacing: -.045em;
+      margin: 18px 0;
+    }
+    .hero h2 {
+      color: #d7edf1;
+      font-size: 1.25rem;
+      font-weight: 500;
+      margin: 0;
+    }
+    .hero p { color: #d6e3ed; max-width: 650px; }
+    .buttons { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 26px; }
+    .button {
+      display: inline-block;
+      border: 1px solid #a8c2d2;
+      border-radius: 8px;
+      color: white;
+      padding: 10px 18px;
+      font-size: .92rem;
+      font-weight: 650;
+      text-decoration: none;
+    }
+    .button.primary { background: #b9eee5; border-color: #b9eee5; color: var(--navy); }
+    .button:hover { background: white; border-color: white; color: var(--navy); }
+    .focus-panel {
+      border: 1px solid #67899c;
+      border-radius: 18px;
+      padding: 26px;
+      background: rgba(255,255,255,.06);
+    }
+    .focus-panel h3 { margin-top: 0; color: white; }
+    .focus-item { padding: 15px 0; border-top: 1px solid #53778e; }
+    .focus-item strong { display: block; color: #b9eee5; }
+    .focus-item span { font-size: .9rem; color: #dae7ee; }
+    section { padding: 66px 0; }
+    section + section { border-top: 1px solid var(--line); }
+    .section-label {
+      color: var(--teal);
+      font-size: .78rem;
+      font-weight: 800;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+    }
+    h2 {
+      color: var(--navy);
+      font-size: clamp(1.7rem, 4vw, 2.2rem);
+      letter-spacing: -.025em;
+      line-height: 1.25;
+      margin: 10px 0 22px;
+    }
+    h3 { line-height: 1.4; color: var(--navy); }
+    .lead { max-width: 800px; color: var(--muted); font-size: 1.05rem; }
+    .grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; }
+    .card {
+      background: var(--white);
+      padding: 26px;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+    }
+    .card h3 { margin: 10px 0; font-size: 1.12rem; }
+    .card p { color: var(--muted); margin-bottom: 0; }
+    .tag {
+      display: inline-block;
+      background: #e7f4f2;
+      color: #126b66;
+      padding: 4px 10px;
+      border-radius: 6px;
+      font-size: .74rem;
+      font-weight: 750;
+    }
+    .education { margin-top: 28px; }
+    .education article {
+      padding: 18px 0 18px 20px;
+      border-left: 3px solid #b6d7de;
+    }
+    .education h3 { margin: 0; font-size: 1rem; }
+    .education p { margin: 4px 0 0; color: var(--muted); }
+    .publication {
+      padding: 22px 0;
+      border-bottom: 1px solid var(--line);
+    }
+    .publication h3 { font-size: 1.05rem; margin: 0 0 7px; }
+    .publication p { margin: 0; color: var(--muted); font-size: .94rem; }
+    ul { padding-left: 21px; }
+    li { margin: 9px 0; }
+    .note { font-size: .9rem; color: var(--muted); }
+    .contact-box {
+      padding: 34px;
+      background: var(--navy);
+      color: white;
+      border-radius: 16px;
+    }
+    .contact-box h2 { color: white; }
+    .contact-box p { color: #d6e3ed; max-width: 700px; }
+    .contact-box a:not(.button) { color: #b9eee5; overflow-wrap: anywhere; }
+    footer { padding: 26px 0; color: var(--muted); font-size: .85rem; }
+    @media (max-width: 760px) {
+      header { position: static; }
+      .nav { align-items: flex-start; flex-direction: column; }
+      nav { gap: 8px 16px; }
+      .hero { padding: 52px 0; }
+      .hero-layout, .grid { grid-template-columns: 1fr; }
+      .hero-layout { gap: 30px; }
+      section { padding: 44px 0; }
+      .card, .focus-panel, .contact-box { padding: 22px; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+
+  <header>
+    <div class="container nav">
+      <a class="brand" href="#home">Zulfiqar Ali<span aria-hidden="true">.</span></a>
+      <nav aria-label="Main navigation">
+        <a href="#about">About</a>
+        <a href="#research">Research</a>
+        <a href="#publications">Publications</a>
+        <a href="#teaching">Teaching</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <div class="hero" id="home">
+      <div class="container hero-layout">
+        <div>
+          <div class="eyebrow">Computational engineering · Manufacturing · Education</div>
+          <h1>Dr. Zulfiqar Ali</h1>
+          <h2>Mechanical Engineering Educator &amp; Researcher</h2>
+          <p>
+            Lecturer in Mechanical Engineering at The University of Hong Kong.
+            My work connects computational analysis, advanced manufacturing,
+            and project-based engineering education.
+          </p>
+          <div class="buttons">
+            <a class="button primary" href="#research">Explore my work</a>
+            <a class="button" href="assets/Zulfiqar_Ali_CV.pdf" download>Download CV</a>
+            <a class="button" href="https://github.com/zulfiqar786hku">GitHub profile</a>
+          </div>
+        </div>
+        <aside class="focus-panel" aria-label="Areas of focus">
+          <h3>Areas of focus</h3>
+          <div class="focus-item">
+            <strong>Computational methods</strong>
+            <span>Isogeometric analysis and thermal simulation</span>
+          </div>
+          <div class="focus-item">
+            <strong>Advanced manufacturing</strong>
+            <span>Additive manufacturing and product development</span>
+          </div>
+          <div class="focus-item">
+            <strong>Engineering education</strong>
+            <span>Mechatronics, programming, and immersive learning</span>
+          </div>
+        </aside>
+      </div>
+    </div>
+
+    <section id="about">
+      <div class="container">
+        <div class="section-label">About</div>
+        <h2>Connecting analysis, design, and learning.</h2>
+        <p class="lead">
+          My academic background spans mechanical engineering and industrial
+          and manufacturing engineering. My research interests include
+          isogeometric collocation methods, thermal analysis, CAD/CAE,
+          additive manufacturing, and reverse engineering. Alongside research,
+          I teach engineering courses and supervise postgraduate capstone projects.
+        </p>
+        <div class="education">
+          <article>
+            <h3>PhD · Mechanical Engineering</h3>
+            <p>City University of Hong Kong · 2016–2022</p>
+          </article>
+          <article>
+            <h3>MS · Mechanical Engineering</h3>
+            <p>Bilkent University, Turkey · 2013–2015</p>
+          </article>
+          <article>
+            <h3>BS · Industrial &amp; Manufacturing Engineering</h3>
+            <p>University of Engineering and Technology, Lahore · 2007–2011</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="research">
+      <div class="container">
+        <div class="section-label">Research &amp; development</div>
+        <h2>Selected areas of work</h2>
+        <div class="grid">
+          <article class="card">
+            <span class="tag">Numerical methods</span>
+            <h3>Isogeometric analysis &amp; parameterization</h3>
+            <p>
+              Research on isogeometric collocation methods and analysis-suitable
+              parameterization, including PDE-based and solution-dependent approaches.
+            </p>
+          </article>
+          <article class="card">
+            <span class="tag">Computational heat transfer</span>
+            <h3>Thermal analysis &amp; simulation</h3>
+            <p>
+              Work on thermal analysis with spatially varying conductivity,
+              general constraints, internal heat sources, and space-time formulations.
+            </p>
+          </article>
+          <article class="card">
+            <span class="tag">Additive manufacturing</span>
+            <h3>Projection-based stereolithography</h3>
+            <p>
+              Research on process modeling and the fabrication of polymer
+              microneedles using DLP-based projection stereolithography.
+            </p>
+          </article>
+          <article class="card">
+            <span class="tag">Pedagogical innovation</span>
+            <h3>Embodied GenAI &amp; immersive VR</h3>
+            <p>
+              Principal Investigator for “Beyond Reality: Embodied-GenAI
+              Concentric Learning for Pedagogical AI in Immersive VR,”
+              supported through a Teaching Development and Language Enhancement
+              Grant with an approved budget of HKD 250,000.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="publications">
+      <div class="container">
+        <div class="section-label">Publications</div>
+        <h2>Selected research publications</h2>
+
+        <article class="publication">
+          <h3>Isogeometric methods for thermal analysis with spatially varying thermal conductivity under general boundary and other constraints</h3>
+          <p>Zulfiqar Ali and Weiyin Ma · Engineering Analysis with Boundary Elements · 2025</p>
+        </article>
+
+        <article class="publication">
+          <h3>Additive manufacturing of ceramics via the laser powder bed fusion process</h3>
+          <p>Abid Ullah, Mussadiq Shah, Zulfiqar Ali, Karim Asami, Asif Ur Rehman, and Claus Emmelmann · International Journal of Applied Ceramic Technology · 2025</p>
+        </article>
+
+        <article class="publication">
+          <h3>Isogeometric collocation method with intuitive constraints for analysis-suitable parameterization</h3>
+          <p>Zulfiqar Ali and Weiyin Ma · Computer Aided Geometric Design · 2021</p>
+        </article>
+
+        <article class="publication">
+          <h3>Fabrication of polymer microneedles for transdermal drug delivery system using DLP-based projection stereolithography</h3>
+          <p>Zulfiqar Ali, E. Buğra Türeyen, Yiğit Karpat, and Melih Çakmakcı · Procedia CIRP · 2016</p>
+        </article>
+
+        <p class="note">
+          Please see my CV for the complete publication list and additional
+          conference contributions.
+        </p>
+      </div>
+    </section>
+
+    <section id="teaching">
+      <div class="container">
+        <div class="section-label">Teaching &amp; mentorship</div>
+        <h2>Engineering through hands-on learning</h2>
+        <div class="grid">
+          <article class="card">
+            <h3>Teaching at HKU</h3>
+            <ul>
+              <li>Mechatronics System Engineering</li>
+              <li>Advanced Technologies and Materials for Product Development</li>
+              <li>Computer Programming for Product Development and Applications</li>
+              <li>Advanced Topics in Innovative Design and Technology</li>
+            </ul>
+          </article>
+          <article class="card">
+            <h3>Supervision &amp; course development</h3>
+            <p>
+              Supervision of master's capstone projects and development of
+              practical engineering learning activities.
+            </p>
+            <p>
+              Course development support of HKD 35,000 for hands-on projects
+              in Mechatronics System Engineering.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="container">
+        <div class="contact-box">
+          <div class="eyebrow">Get in touch</div>
+          <h2>Let’s connect.</h2>
+          <p>
+            I welcome enquiries about research collaboration, computational
+            engineering, additive manufacturing, and engineering education.
+          </p>
+          <p>
+            <a href="mailto:zulfiali@hku.hk">zulfiali@hku.hk</a><br>
+            Hong Kong
+          </p>
+          <div class="buttons">
+            <a class="button primary" href="mailto:zulfiali@hku.hk">Email me</a>
+            <a class="button" href="https://github.com/zulfiqar786hku">Visit GitHub</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      © Dr. Zulfiqar Ali · Personal academic portfolio.
+      Affiliations are provided for identification.
+    </div>
+  </footer>
+</body>
+</html>
