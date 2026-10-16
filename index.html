@@ -3,12 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta
-    name="description"
-    content="Dr. Zulfiqar Ali — mechanical engineering educator and researcher working in isogeometric analysis, thermal simulation, additive manufacturing, and engineering education."
-  >
+  <meta name="description"
+    content="Dr. Zulfiqar Ali — mechanical engineering research and education.">
   <meta name="theme-color" content="#102b46">
-  <title>Dr. Zulfiqar Ali | Engineering Research & Education</title>
+  <title>Dr. Zulfiqar Ali | Research & Education</title>
 
   <style>
     :root {
@@ -19,16 +17,14 @@
       --muted: #56687a;
       --paper: #f5f8fb;
       --line: #dce5ed;
-      --white: #ffffff;
+      --white: #fff;
     }
 
-    * {
-      box-sizing: border-box;
-    }
+    * { box-sizing: border-box; }
 
     html {
       scroll-behavior: smooth;
-      scroll-padding-top: 95px;
+      scroll-padding-top: 90px;
     }
 
     body {
@@ -45,17 +41,19 @@
       text-underline-offset: 4px;
     }
 
-    a:hover {
-      color: var(--teal);
+    a:hover { color: var(--teal); }
+
+    a:focus-visible,
+    button:focus-visible,
+    video:focus-visible {
+      outline: 3px solid #e5a52b;
+      outline-offset: 4px;
     }
 
-    a:focus-visible {
-      outline: 3px solid #e5a52b;
-      outline-offset: 5px;
-    }
+    button { font: inherit; }
 
     .container {
-      width: min(1100px, 90%);
+      width: min(1140px, 90%);
       margin-inline: auto;
     }
 
@@ -63,21 +61,19 @@
       position: absolute;
       top: -100px;
       left: 12px;
+      z-index: 30;
       background: white;
       padding: 10px;
-      z-index: 20;
     }
 
-    .skip:focus {
-      top: 12px;
-    }
+    .skip:focus { top: 12px; }
 
     header {
-      background: var(--white);
+      background: white;
       border-bottom: 1px solid var(--line);
       position: sticky;
       top: 0;
-      z-index: 10;
+      z-index: 20;
     }
 
     .nav {
@@ -102,7 +98,7 @@
     }
 
     nav a {
-      font-size: 0.9rem;
+      font-size: .9rem;
       text-decoration: none;
       font-weight: 600;
     }
@@ -110,68 +106,71 @@
     .hero {
       color: white;
       background:
-        radial-gradient(
-          ellipse at top right,
-          #215e73 0,
-          transparent 55%
-        ),
+        radial-gradient(ellipse at top right, #215e73, transparent 60%),
         var(--navy);
-      padding: 76px 0;
+      padding: 70px 0;
     }
 
     .hero-layout {
       display: grid;
       grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr);
       align-items: center;
-      gap: 54px;
+      gap: 50px;
     }
 
     .eyebrow {
-      font-size: 0.78rem;
+      font-size: .78rem;
       text-transform: uppercase;
-      letter-spacing: 0.13em;
+      letter-spacing: .13em;
       font-weight: 750;
       color: #a8e2dd;
     }
 
     h1 {
-      font-size: clamp(2.5rem, 6vw, 4.6rem);
-      line-height: 1.08;
-      letter-spacing: -0.045em;
+      font-size: clamp(2.5rem, 6vw, 4.5rem);
+      line-height: 1.1;
+      letter-spacing: -.045em;
       margin: 18px 0;
+    }
+
+    h2 {
+      color: var(--navy);
+      font-size: clamp(1.7rem, 4vw, 2.2rem);
+      letter-spacing: -.025em;
+      line-height: 1.3;
+      margin: 10px 0 24px;
+    }
+
+    h3 {
+      color: var(--navy);
+      line-height: 1.4;
     }
 
     .hero h2 {
       color: #d7edf1;
       font-size: 1.25rem;
       font-weight: 500;
-      margin: 0;
-      line-height: 1.5;
+      letter-spacing: normal;
     }
 
-    .hero-description {
-      color: #d6e3ed;
-      max-width: 650px;
-      margin-top: 22px;
-    }
+    .hero-description { color: #d6e3ed; }
 
     .buttons {
       display: flex;
       flex-wrap: wrap;
       gap: 12px;
-      margin-top: 26px;
+      margin-top: 24px;
     }
 
     .button {
       display: inline-block;
+      padding: 10px 18px;
       border: 1px solid #a8c2d2;
       border-radius: 8px;
       color: white;
-      padding: 10px 18px;
-      font-size: 0.92rem;
+      font-size: .92rem;
       font-weight: 650;
       text-decoration: none;
-      transition: background 0.2s, color 0.2s;
     }
 
     .button.primary {
@@ -182,13 +181,12 @@
 
     .button:hover {
       background: white;
-      border-color: white;
       color: var(--navy);
     }
 
     .profile-panel {
       width: 100%;
-      max-width: 360px;
+      max-width: 350px;
       justify-self: end;
     }
 
@@ -197,19 +195,14 @@
       padding: 9px;
       border: 1px solid #7899aa;
       border-radius: 26px;
-      background: rgba(255, 255, 255, 0.08);
-      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.18);
+      background: rgba(255,255,255,.08);
     }
 
     .profile-photo {
       display: block;
       width: 100%;
       height: auto;
-      aspect-ratio: 1;
-      object-fit: cover;
-      object-position: center;
       border-radius: 18px;
-      background: #dce5ed;
     }
 
     .profile-caption {
@@ -217,17 +210,12 @@
       text-align: center;
     }
 
-    .profile-caption strong {
-      display: block;
-      font-size: 1.05rem;
-      color: white;
-    }
+    .profile-caption strong,
+    .profile-caption span { display: block; }
 
     .profile-caption span {
-      display: block;
-      font-size: 0.88rem;
+      font-size: .88rem;
       color: #d6e3ed;
-      margin-top: 3px;
     }
 
     .focus-tags {
@@ -240,44 +228,25 @@
 
     .focus-tags span {
       border: 1px solid #67899c;
-      background: rgba(255, 255, 255, 0.05);
-      color: #dceef0;
       border-radius: 20px;
       padding: 5px 11px;
-      font-size: 0.75rem;
+      font-size: .75rem;
+      color: #dceef0;
     }
 
-    section {
-      padding: 66px 0;
-    }
-
-    section + section {
-      border-top: 1px solid var(--line);
-    }
+    section { padding: 64px 0; }
+    section + section { border-top: 1px solid var(--line); }
 
     .section-label {
       color: var(--teal);
-      font-size: 0.78rem;
+      font-size: .78rem;
       font-weight: 800;
-      letter-spacing: 0.12em;
+      letter-spacing: .12em;
       text-transform: uppercase;
     }
 
-    h2 {
-      color: var(--navy);
-      font-size: clamp(1.7rem, 4vw, 2.2rem);
-      letter-spacing: -0.025em;
-      line-height: 1.25;
-      margin: 10px 0 22px;
-    }
-
-    h3 {
-      line-height: 1.4;
-      color: var(--navy);
-    }
-
     .lead {
-      max-width: 800px;
+      max-width: 850px;
       color: var(--muted);
       font-size: 1.05rem;
     }
@@ -285,39 +254,117 @@
     .grid {
       display: grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 20px;
+      gap: 24px;
+      align-items: start;
     }
 
     .card {
-      background: var(--white);
+      min-width: 0;
+      background: white;
       padding: 26px;
       border: 1px solid var(--line);
-      border-radius: 14px;
+      border-radius: 16px;
     }
 
     .card h3 {
-      margin: 10px 0;
-      font-size: 1.12rem;
+      margin: 14px 0;
+      font-size: 1.2rem;
     }
 
-    .card p {
-      color: var(--muted);
-      margin-bottom: 0;
-    }
+    .card p { color: var(--muted); }
 
     .tag {
       display: inline-block;
       background: #e7f4f2;
       color: #126b66;
-      padding: 4px 10px;
+      padding: 5px 11px;
       border-radius: 6px;
-      font-size: 0.74rem;
+      font-size: .76rem;
       font-weight: 750;
     }
 
-    .education {
-      margin-top: 28px;
+    /* Research pictures and videos */
+    .media-block {
+      margin: 24px 0 0;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      overflow: hidden;
+      background: white;
     }
+
+    .research-image {
+      display: block;
+      width: 100%;
+      height: auto;
+      background: white;
+    }
+
+    .media-block figcaption {
+      padding: 12px 15px;
+      background: #f7fafc;
+      border-top: 1px solid var(--line);
+      font-size: .86rem;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+
+    .video-heading {
+      margin-top: 26px;
+      font-size: .9rem;
+      font-weight: 750;
+      color: var(--navy);
+    }
+
+    .video-tabs {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin: 12px 0;
+    }
+
+    .video-tab {
+      padding: 8px 12px;
+      min-height: 44px;
+      border: 1px solid #cbd9e3;
+      border-radius: 8px;
+      background: white;
+      color: var(--navy);
+      font-size: .85rem;
+      font-weight: 650;
+      cursor: pointer;
+    }
+
+    .video-tab:hover { background: #edf5f7; }
+
+    .video-tab[aria-pressed="true"] {
+      background: var(--navy);
+      border-color: var(--navy);
+      color: white;
+    }
+
+    .video-frame { margin-top: 12px; }
+
+    .research-video {
+      display: block;
+      width: 100%;
+      aspect-ratio: 4 / 3;
+      object-fit: contain;
+      background: #eef3f7;
+    }
+
+    .media-link {
+      display: inline-block;
+      margin-top: 7px;
+      font-size: .84rem;
+    }
+
+    .media-status {
+      font-size: .85rem;
+      color: #9b2c2c;
+      margin-top: 12px;
+    }
+
+    .media-status:empty { display: none; }
 
     .education article {
       padding: 18px 0 18px 20px;
@@ -347,21 +394,11 @@
     .publication p {
       margin: 0;
       color: var(--muted);
-      font-size: 0.94rem;
+      font-size: .94rem;
     }
 
-    ul {
-      padding-left: 21px;
-    }
-
-    li {
-      margin: 9px 0;
-    }
-
-    .note {
-      font-size: 0.9rem;
-      color: var(--muted);
-    }
+    ul { padding-left: 21px; }
+    li { margin: 9px 0; }
 
     .contact-box {
       padding: 34px;
@@ -370,14 +407,8 @@
       border-radius: 16px;
     }
 
-    .contact-box h2 {
-      color: white;
-    }
-
-    .contact-box p {
-      color: #d6e3ed;
-      max-width: 700px;
-    }
+    .contact-box h2 { color: white; }
+    .contact-box p { color: #d6e3ed; }
 
     .contact-box a:not(.button) {
       color: #b9eee5;
@@ -387,59 +418,36 @@
     footer {
       padding: 26px 0;
       color: var(--muted);
-      font-size: 0.85rem;
+      font-size: .85rem;
     }
 
     @media (max-width: 760px) {
-      header {
-        position: static;
-      }
+      header { position: static; }
 
       .nav {
         align-items: flex-start;
         flex-direction: column;
       }
 
-      nav {
-        gap: 8px 16px;
-      }
-
-      .hero {
-        padding: 48px 0;
-      }
+      nav { gap: 8px 16px; }
+      .hero { padding: 45px 0; }
 
       .hero-layout,
-      .grid {
-        grid-template-columns: 1fr;
-      }
+      .grid { grid-template-columns: 1fr; }
 
-      .hero-layout {
-        gap: 36px;
-      }
+      .hero-layout { gap: 34px; }
 
       .profile-panel {
         justify-self: center;
         max-width: 310px;
       }
 
-      section {
-        padding: 44px 0;
-      }
-
-      .card,
-      .contact-box {
-        padding: 22px;
-      }
+      section { padding: 42px 0; }
+      .card, .contact-box { padding: 20px; }
     }
 
     @media (prefers-reduced-motion: reduce) {
-      html {
-        scroll-behavior: auto;
-      }
-
-      .button {
-        transition: none;
-      }
+      html { scroll-behavior: auto; }
     }
   </style>
 </head>
@@ -450,7 +458,6 @@
   <header>
     <div class="container nav">
       <a class="brand" href="#home">Zulfiqar Ali.</a>
-
       <nav aria-label="Main navigation">
         <a href="#about">About</a>
         <a href="#research">Research</a>
@@ -470,10 +477,7 @@
           </div>
 
           <h1>Dr. Zulfiqar Ali</h1>
-
-          <h2>
-            Mechanical Engineering Educator &amp; Researcher
-          </h2>
+          <h2>Mechanical Engineering Educator &amp; Researcher</h2>
 
           <p class="hero-description">
             Lecturer in Mechanical Engineering at The University of Hong Kong.
@@ -482,37 +486,21 @@
           </p>
 
           <div class="buttons">
-            <a class="button primary" href="#research">
-              Explore my work
-            </a>
-
-            <a
-              class="button"
-              href="assets/Zulfiqar_Ali_CV.pdf"
-              download
-            >
-              Download CV
-            </a>
-
-            <a
-              class="button"
-              href="https://github.com/zulfiqar786hku"
-            >
+            <a class="button primary" href="#research">Explore my work</a>
+            <a class="button" href="#contact">Contact me</a>
+            <a class="button" href="https://github.com/zulfiqar786hku">
               GitHub profile
             </a>
           </div>
         </div>
 
-        <aside class="profile-panel" aria-label="Profile portrait and interests">
+        <aside class="profile-panel" aria-label="Profile">
           <figure class="portrait-frame">
-            <img
-              class="profile-photo"
+            <img class="profile-photo"
               src="assets/profile.jpg"
-              alt="Portrait of Dr. Zulfiqar Ali wearing a suit and tie"
-              width="480"
-              height="480"
-              fetchpriority="high"
-            >
+              alt="Portrait of Dr. Zulfiqar Ali"
+              width="480" height="480"
+              fetchpriority="high">
 
             <figcaption class="profile-caption">
               <strong>Dr. Zulfiqar Ali</strong>
@@ -533,7 +521,6 @@
     <section id="about">
       <div class="container">
         <div class="section-label">About</div>
-
         <h2>Connecting analysis, design, and learning.</h2>
 
         <p class="lead">
@@ -550,12 +537,10 @@
             <h3>PhD · Mechanical Engineering</h3>
             <p>City University of Hong Kong · 2016–2022</p>
           </article>
-
           <article>
             <h3>MS · Mechanical Engineering</h3>
             <p>Bilkent University, Turkey · 2013–2015</p>
           </article>
-
           <article>
             <h3>BS · Industrial &amp; Manufacturing Engineering</h3>
             <p>
@@ -569,42 +554,169 @@
     <section id="research">
       <div class="container">
         <div class="section-label">Research &amp; development</div>
-
         <h2>Selected areas of work</h2>
 
         <div class="grid">
+
+          <!-- ISOGEOMETRIC ANALYSIS -->
           <article class="card">
             <span class="tag">Numerical methods</span>
             <h3>Isogeometric analysis &amp; parameterization</h3>
+
             <p>
               Research on isogeometric collocation methods and
-              analysis-suitable parameterization, including PDE-based and
-              solution-dependent approaches.
+              analysis-suitable parameterization, including PDE-based
+              and solution-dependent approaches.
             </p>
+
+            <div class="video-heading">Research animations</div>
+
+            <div class="video-tabs" role="group"
+              aria-label="Choose a research animation">
+              <button class="video-tab" type="button"
+                data-animation="1"
+                aria-pressed="true"
+                aria-controls="iga-video">Animation 1</button>
+
+              <button class="video-tab" type="button"
+                data-animation="2"
+                aria-pressed="false"
+                aria-controls="iga-video">Animation 2</button>
+
+              <button class="video-tab" type="button"
+                data-animation="3"
+                aria-pressed="false"
+                aria-controls="iga-video">Animation 3</button>
+
+              <button class="video-tab" type="button"
+                data-animation="4"
+                aria-pressed="false"
+                aria-controls="iga-video">Animation 4</button>
+
+              <button class="video-tab" type="button"
+                data-animation="5"
+                aria-pressed="false"
+                aria-controls="iga-video">Animation 5</button>
+            </div>
+
+            <figure class="media-block video-frame">
+              <video id="iga-video"
+                class="research-video"
+                controls
+                playsinline
+                preload="none"
+                aria-label="Isogeometric research animation 1"
+                aria-describedby="iga-caption">
+                <source
+                  src="assets/isogeometric-animation-1.mp4"
+                  type="video/mp4">
+                Your browser does not support embedded video.
+                Please use the link below to open the animation.
+              </video>
+
+              <figcaption>
+                <span id="iga-caption" aria-live="polite">
+                  Isogeometric analysis &amp; parameterization — Animation 1.
+                </span>
+                <br>
+                <a class="media-link" id="video-direct-link"
+                  href="assets/isogeometric-animation-1.mp4"
+                  target="_blank" rel="noopener">
+                  Open this video separately
+                </a>
+              </figcaption>
+            </figure>
+
+            <p class="media-status" id="video-status" role="status"></p>
+
+            <noscript>
+              <p>Open the other animations:</p>
+              <ul>
+                <li><a href="assets/isogeometric-animation-2.mp4">
+                  Animation 2</a></li>
+                <li><a href="assets/isogeometric-animation-3.mp4">
+                  Animation 3</a></li>
+                <li><a href="assets/isogeometric-animation-4.mp4">
+                  Animation 4</a></li>
+                <li><a href="assets/isogeometric-animation-5.mp4">
+                  Animation 5</a></li>
+              </ul>
+            </noscript>
           </article>
 
+          <!-- THERMAL ANALYSIS -->
           <article class="card">
             <span class="tag">Computational heat transfer</span>
             <h3>Thermal analysis &amp; simulation</h3>
+
             <p>
               Work on thermal analysis with spatially varying conductivity,
               general constraints, internal heat sources, and space-time
               formulations.
             </p>
+
+            <figure class="media-block">
+              <a href="assets/thermal-1.jpg"
+                target="_blank" rel="noopener"
+                aria-label="Open thermal research figure 1 at full size">
+                <img class="research-image"
+                  src="assets/thermal-1.jpg"
+                  alt="Thermal analysis research figure 1"
+                  loading="lazy" decoding="async">
+              </a>
+              <figcaption>
+                Thermal analysis — Research figure 1.
+                Select the image to view it at full size.
+              </figcaption>
+            </figure>
+
+            <figure class="media-block">
+              <a href="assets/thermal-2.jpg"
+                target="_blank" rel="noopener"
+                aria-label="Open thermal research figure 2 at full size">
+                <img class="research-image"
+                  src="assets/thermal-2.jpg"
+                  alt="Thermal analysis research figure 2"
+                  loading="lazy" decoding="async">
+              </a>
+              <figcaption>
+                Thermal analysis — Research figure 2.
+                Select the image to view it at full size.
+              </figcaption>
+            </figure>
           </article>
 
+          <!-- ADDITIVE MANUFACTURING -->
           <article class="card">
             <span class="tag">Additive manufacturing</span>
             <h3>Projection-based stereolithography</h3>
+
             <p>
               Research on process modeling and the fabrication of polymer
               microneedles using DLP-based projection stereolithography.
             </p>
+
+            <figure class="media-block">
+              <a href="assets/microneedles-1.jpg"
+                target="_blank" rel="noopener"
+                aria-label="Open the microneedle research figure at full size">
+                <img class="research-image"
+                  src="assets/microneedles-1.jpg"
+                  alt="Research figure for the polymer microneedle project"
+                  loading="lazy" decoding="async">
+              </a>
+              <figcaption>
+                Polymer microneedle research.
+                Select the image to view it at full size.
+              </figcaption>
+            </figure>
           </article>
 
+          <!-- GENAI AND VR -->
           <article class="card">
             <span class="tag">Pedagogical innovation</span>
             <h3>Embodied GenAI &amp; immersive VR</h3>
+
             <p>
               Principal Investigator for “Beyond Reality: Embodied-GenAI
               Concentric Learning for Pedagogical AI in Immersive VR,”
@@ -612,6 +724,7 @@
               Enhancement Grant with an approved budget of HKD 250,000.
             </p>
           </article>
+
         </div>
       </div>
     </section>
@@ -619,7 +732,6 @@
     <section id="publications">
       <div class="container">
         <div class="section-label">Publications</div>
-
         <h2>Selected research publications</h2>
 
         <article class="publication">
@@ -667,24 +779,17 @@
             Melih Çakmakcı · Procedia CIRP · 2016
           </p>
         </article>
-
-        <p class="note">
-          Please see my CV for the complete publication list and
-          additional conference contributions.
-        </p>
       </div>
     </section>
 
     <section id="teaching">
       <div class="container">
         <div class="section-label">Teaching &amp; mentorship</div>
-
         <h2>Engineering through hands-on learning</h2>
 
         <div class="grid">
           <article class="card">
             <h3>Teaching at HKU</h3>
-
             <ul>
               <li>Mechatronics System Engineering</li>
               <li>
@@ -693,20 +798,16 @@
               <li>
                 Computer Programming for Product Development and Applications
               </li>
-              <li>
-                Advanced Topics in Innovative Design and Technology
-              </li>
+              <li>Advanced Topics in Innovative Design and Technology</li>
             </ul>
           </article>
 
           <article class="card">
             <h3>Supervision &amp; course development</h3>
-
             <p>
               Supervision of master's capstone projects and development
               of practical engineering learning activities.
             </p>
-
             <p>
               Course development support of HKD 35,000 for hands-on
               projects in Mechatronics System Engineering.
@@ -720,7 +821,6 @@
       <div class="container">
         <div class="contact-box">
           <div class="eyebrow">Get in touch</div>
-
           <h2>Let’s connect.</h2>
 
           <p>
@@ -730,25 +830,15 @@
           </p>
 
           <p>
-            <a href="mailto:zulfiali@hku.hk">
-              zulfiali@hku.hk
-            </a>
-            <br>
-            Hong Kong
+            <a href="mailto:zulfiali@hku.hk">zulfiali@hku.hk</a>
+            <br>Hong Kong
           </p>
 
           <div class="buttons">
-            <a
-              class="button primary"
-              href="mailto:zulfiali@hku.hk"
-            >
+            <a class="button primary" href="mailto:zulfiali@hku.hk">
               Email me
             </a>
-
-            <a
-              class="button"
-              href="https://github.com/zulfiqar786hku"
-            >
+            <a class="button" href="https://github.com/zulfiqar786hku">
               Visit GitHub
             </a>
           </div>
@@ -763,5 +853,59 @@
       Affiliations are provided for identification.
     </div>
   </footer>
+
+  <script>
+    const video = document.getElementById("iga-video");
+    const source = video.querySelector("source");
+    const caption = document.getElementById("iga-caption");
+    const directLink = document.getElementById("video-direct-link");
+    const status = document.getElementById("video-status");
+    const buttons = document.querySelectorAll(".video-tab");
+
+    buttons.forEach((button) => {
+      button.addEventListener("click", () => {
+        if (button.getAttribute("aria-pressed") === "true") return;
+
+        const number = button.dataset.animation;
+        const path = `assets/isogeometric-animation-${number}.mp4`;
+
+        video.pause();
+        status.textContent = "";
+
+        buttons.forEach((item) => {
+          item.setAttribute(
+            "aria-pressed",
+            item === button ? "true" : "false"
+          );
+        });
+
+        source.src = path;
+        directLink.href = path;
+
+        caption.textContent =
+          `Isogeometric analysis & parameterization — Animation ${number}.`;
+
+        video.setAttribute(
+          "aria-label",
+          `Isogeometric research animation ${number}`
+        );
+
+        video.load();
+      });
+    });
+
+    function showVideoError() {
+      status.textContent =
+        "This video could not be loaded or played. Try the " +
+        "'Open this video separately' link above.";
+    }
+
+    video.addEventListener("error", showVideoError);
+    source.addEventListener("error", showVideoError);
+
+    video.addEventListener("loadedmetadata", () => {
+      status.textContent = "";
+    });
+  </script>
 </body>
 </html>
